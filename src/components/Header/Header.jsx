@@ -3,15 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
+
+    
     let activeStyle = {
         color: 'white',
         backgroundColor: '#4f46e5',
       };
 
       
-    let activeClassName = "underline";
-
-    
     return (
         <header className='shadow py-5'>
               <nav className='container mx-auto'>

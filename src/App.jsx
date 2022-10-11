@@ -15,10 +15,16 @@ function App() {
       children:[
         {
           path: '/',
+          loader: ()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
           element: <Topics />,
         },
         {
           path: '/topics',
+          loader: ()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
           element: <Topics />,
         },
         {
