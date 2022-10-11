@@ -5,7 +5,7 @@ const Question = ({ques}) => {
     // console.log(ques);
     const {id , options , correctAnswer , question} = ques
     const quesSplit = question.replace( /(<([^>]+)>)/ig, '');
-    // let count = 1
+    let count = 0
     // console.log(options);
     // setQuestionNumber((count)=> count + 1)
 
@@ -16,10 +16,13 @@ const Question = ({ques}) => {
     return (
         <div className='bg-white my-6 p-5 rounded-sm shadow'>
             <h1 className='font-medium text-lg'>{} {quesSplit}</h1>
+
              <div className='grid grid-cols-2 mt-5 gap-4 justify-between'>
                 {
-                    options.map(op => <button 
+                    options.map((op , index) => <button
+                        key={index}
                         className='
+          
                         font-medium
                         btn
                          bg-slate-100
