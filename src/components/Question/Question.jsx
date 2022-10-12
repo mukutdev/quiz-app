@@ -1,36 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Question = ({ques}) => {
-    // const [questionNumber , setQuestionNumber] = useState(1)
-    // console.log(ques);
-    const {id , options , correctAnswer , question} = ques
-    const quesSplit = question.replace( /(<([^>]+)>)/ig, '');
-    let count = 0
-    
-    return (
-        <div className='bg-white my-6 p-5 rounded-sm shadow'>
-            <h1 className='font-medium text-lg'>{} {quesSplit}</h1>
+const Question = ({ ques }) => {
 
-             <div className='grid grid-cols-2 mt-5 gap-4 justify-between'>
-                {
-                    options.map((op , index) => <button
-                        key={index}
-                        className='
-                        h-auto
+  const { id, options, correctAnswer, question } = ques;
+  const quesSplit = question.replace(/(<([^>]+)>)/gi, "");
+
+  const [selected, setSelected] = useState();
+
+  const rightColors = {bg : 'bg-green-600' , color : 'text-white'}
+  const wrongColors = {bg : 'bg-red-600' , color : 'text-white'}
+
+
+  const handleSelect = answer => {
+    if (selected === answer && selected === correctAnswer) {
+
+       return `${rightColors.bg} ${rightColors.color}`;
+       
+    }
+    else if((selected === answer && selected !== correctAnswer) || (selected === correctAnswer)){
+      return `${wrongColors.bg} ${wrongColors.color}`;
+    }
+   
+    else if(answer === correctAnswer){
+      return `${rightColors.bg} ${rightColors.color}`;
+      
+    } 
+  
+  };
+
+  const handleCheck = answer => {
+    if(answer === correctAnswer){
+      toast("Right Answer"); 
+    }else{
+      toast("wrong Answer"); 
+    }
+    setSelected(answer);
+  };
+
+  // let count = 0
+
+  return (
+    <div className="bg-white my-6 p-5 rounded-sm shadow ">
+      <h1 className="font-medium text-lg">
+        {} {quesSplit}
+      </h1>
+
+      <div className="grid grid-cols-2 mt-5 gap-4 justify-between">
+        {
+        options.map((op, index) => (
+          <button
+            key={index}
+            onClick={() => handleCheck(op)}
+            className={`
+                         ${selected && handleSelect(op)}
+                         h-auto
                         font-medium
                         btn
+                        btn-outline
                         leading-5
                         py-2
-                         bg-slate-100
-                          text-slate-700
+                      
                           hover:bg-indigo-600
-                          hover:text-white'
-                        
-                        > {op} </button>)
-                }
-             </div>
-        </div>
-    );
+                          hover:text-white
+                         
+                          `}
+          > {op}
+          </button>
+          
+        )
+        )}
+                <ToastContainer />
+
+      </div>
+    </div>
+  );
 };
 
 export default Question;
