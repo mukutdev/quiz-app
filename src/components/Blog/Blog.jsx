@@ -12,6 +12,19 @@ const Blog = () => {
               <input type="checkbox" /> 
 
           <div className="collapse-title text-xl font-medium text-indigo-600">
+           How does context api work ?
+          </div>
+          <div className="collapse-content">
+            <p className="font-medium">The React Context API is a way for a React app to effectively produce global variables that can be passed around. This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.</p>
+          </div>
+        </div>
+        <div
+          tabIndex={0}
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+        >
+              <input type="checkbox" /> 
+
+          <div className="collapse-title text-xl font-medium text-indigo-600">
             What is the purpose of react  router ?
           </div>
           <div className="collapse-content">
