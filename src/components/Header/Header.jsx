@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars  , faXmark} from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
+
+    const [navOpen , setNavOpen] = useState(false)
 
     
     let activeStyle = {
@@ -20,8 +23,17 @@ const Header = () => {
                     Quiz App
                     </Link>
                  </div>
-                 <div className="nav-items flex list-none gap-6 items-center">
+                 <div className="nav-items">
+                    <div  onClick={()=> setNavOpen(!navOpen)} className='mr-4 text-2xl bg-indigo-600 px-3 py-1 duration-500 ease-in text-white cursor-pointer top-0  md:hidden'>
+                    {
+                        navOpen ? 
+                        <FontAwesomeIcon  icon={faXmark} /> :
+                        <FontAwesomeIcon   icon={faBars} />
+                    }
              
+                    </div>
+                    <div className={`flex flex-col duration-500 ease-in-out md:bg-transparent bg-indigo-600 md:flex-row absolute md:static w-full gap-6 items-center 
+                    ${navOpen ? 'top-20 left-0 text-white py-7' : 'top-[-300px] left-0 '  }`}>
                     <NavLink 
                     style={({ isActive }) =>
                      isActive ? activeStyle : undefined
@@ -47,6 +59,8 @@ const Header = () => {
                     className='text-base font-medium uppercase mx-2 tracking-widest p-2 rounded hover:bg-indigo-500 hover:text-white' to={'/blog'}> 
                     Blog 
                     </NavLink>
+                    </div>
+                   
                  </div>
                  </div>
               </nav>

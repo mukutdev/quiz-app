@@ -13,7 +13,7 @@ const Topics = () => {
 
          <div className="container mx-auto mt-20" id="quiz-area">
              <h2 className="text-center text-3xl font-bold">Select Quiz Department </h2>
-             <div className="grid grid-cols-2 justify-center gap-10 my-20">
+             <div className="grid md:grid-cols-2 justify-center gap-10 my-20">
                  {
                    quizDep.map(quiz => <SingleTopic 
                     key={quiz.id}
