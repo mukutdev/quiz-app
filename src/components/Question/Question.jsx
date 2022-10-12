@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
-const Question = ({ ques }) => {
+const Question = ({ ques , indexNo }) => {
   
 
   const { options, correctAnswer, question} = ques;
@@ -36,21 +36,20 @@ const Question = ({ ques }) => {
     setSelected(answer);
     if(answer === correctAnswer){
       toast.success('Wow Great Job ! Its a Right answer')
-      // setQuizCount((quizCount) => quizCount + 1)
-      // setTotal(total + 1)
+  
     }else{
       toast.error('Opps !, Wrong answer')
     }
     
   };
 
-  // let count = 0
+
 
   return (
     <div className="bg-white my-6 p-5 rounded-sm shadow ">
       <div className="flex justify-between items-center gap-7">
       <h1 className="font-medium text-lg">
-        {} {quesSplit}
+        {indexNo + 1}. {quesSplit}
       </h1>
       <span className="cursor-pointer" title="See Answer" onClick={() => toast(
 

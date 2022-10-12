@@ -15,16 +15,16 @@ const QuizElement = () => {
                </div>
             <h2 className='text-center text-indigo-600 capitalize text-2xl font-bold'>{name} Important Question</h2>
             <h3 className='text-center my-4 font-semibold text-base'>Total Quiz : {total}</h3>
-            <h3 className='text-center my-4 font-semibold text-base'>Correct Quiz : </h3>
 
             </div>
 
             <div className='md:w-1/2 md:mx-auto rounded-sm shadow-lg bg-slate-100 p-5 my-8'>
                 <div>
                     {
-                        questions.map(ques => <Question
+                        questions.map((ques , index) => <Question
                         key={ques.id}
                         ques={ques}
+                        indexNo={index}
                         ></Question>)
                     }
                 </div>
