@@ -13,9 +13,8 @@ import {
 const Statistic = () => {
 
     const quizStat = useLoaderData()
-    console.log(quizStat.data);
     const quizData = quizStat.data
-    console.log(name);
+
     const data = [
         {
           name: quizData[0].name,
@@ -44,6 +43,9 @@ const Statistic = () => {
             <h1 className='font-semibold text-center text-3xl'>Quiz Stats</h1>
 
             <div className='w-2/3 mx-auto my-8 shadow-lg rounded p-5'>
+                
+                 
+
                     {
                         <BarChart
                         className='mx-auto'
@@ -67,7 +69,7 @@ const Statistic = () => {
                       </BarChart>
                       
                     }
-                    <h1 className='text-center'>Quiz Chart</h1>
+                    <h1 className='text-center font-medium mt-6 text-lg'>Quiz Chart</h1>
             </div>
         </div>
         
