@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars  , faXmark} from '@fortawesome/free-solid-svg-icons'
+// import qLogo from '../../../public/Quiz-logo'
+import logo  from '../../../public/logo.png'
 
 const Header = () => {
 
@@ -20,7 +22,8 @@ const Header = () => {
                  <div className="nav-items-wrapper flex justify-between items-center">
                  <div className="logo md:ml-0 ml-3">
                     <Link className='text-3xl font-bold text-indigo-600' to={'/'}>
-                    Quiz App
+                    {/* Quiz Storm */}
+                         <img src={logo} alt="" />
                     </Link>
                  </div>
                  <div className="nav-items">
