@@ -7,8 +7,10 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend
+    Legend,
+    ResponsiveContainer
   } from "recharts";
+
 
 const Statistic = () => {
 
@@ -42,33 +44,37 @@ const Statistic = () => {
         <div className='container mx-auto my-6'>
             <h1 className='font-semibold text-center text-3xl'>Quiz Stats</h1>
 
-            <div className='w-2/3 mx-auto my-8 shadow-lg rounded p-5'>
+            <div className='md:w-2/3 mx-auto my-8 shadow-lg rounded md:p-5 py-3'>
                 
                  
 
-                    {
-                        <BarChart
-                        className='mx-auto'
-                        width={500}
-                        height={300}
-                        data={data}
-                        margin={{
-                          top: 5,
-                          right: 30,
-                          left: 20,
-                          bottom: 5
-                        }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="quiz" fill="#8884d8" />
                    
-                      </BarChart>
-                      
-                    }
+                    {
+                       <ResponsiveContainer width= {'100%'}
+                       height={300}>
+                      <BarChart
+                    className='md:mx-auto '
+                    
+                    data={data}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="quiz" fill="#8884d8" />
+               
+                  </BarChart>
+                  </ResponsiveContainer>
+                  
+                }
+                    
                     <h1 className='text-center font-medium mt-6 text-lg'>Quiz Chart</h1>
             </div>
         </div>

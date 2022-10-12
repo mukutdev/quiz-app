@@ -32,7 +32,7 @@ const Header = () => {
                     }
              
                     </div>
-                    <div className={`flex flex-col duration-500 ease-in-out md:bg-transparent bg-indigo-600 md:flex-row absolute md:static w-full gap-6 items-center 
+                    <div className={`flex flex-col duration-500 z-10 ease-in-out md:bg-transparent bg-indigo-600 md:flex-row absolute md:static w-full gap-6 items-center 
                     ${navOpen ? 'top-20 left-0 text-white py-7' : 'top-[-300px] left-0 '  }`}>
                     <NavLink 
                     style={({ isActive }) =>
