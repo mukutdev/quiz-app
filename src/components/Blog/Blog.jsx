@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <div className="container mx-auto my-6">
       <h2 className="font-semibold text-center text-3xl">Blogs </h2>
-      <div className="w-2/3 mx-auto my-8 shadow-lg rounded p-5">
+      <div className="md:w-2/3 mx-auto my-8 shadow-lg rounded p-5">
         <div
           tabIndex={0}
           className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-4"
