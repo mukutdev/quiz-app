@@ -11,7 +11,7 @@ const QuizElement = () => {
     // console.log(quizData.data);
     return (
         <div className='container mx-auto mt-20'>
-            <div className='w-1/2 mx-auto rounded-sm shadow-lg p-5'>
+            <div className='md:w-1/2 md:mx-auto mx-6 rounded-sm shadow-lg p-5'>
                <div className='bg-slate-100 w-40 h-40 mx-auto my-4'>
                  <img  className=' rounded ' src={logo} alt="" />
                </div>
@@ -19,7 +19,7 @@ const QuizElement = () => {
             <h3 className='text-center my-4 font-semibold text-base'>Total Quiz : {total}</h3>
             </div>
 
-            <div className='w-1/2 mx-auto rounded-sm shadow-lg bg-slate-100 p-5 my-8'>
+            <div className='md:w-1/2 md:mx-auto rounded-sm shadow-lg bg-slate-100 p-5 my-8'>
                 <div>
                     {
                         questions.map(ques => <Question
