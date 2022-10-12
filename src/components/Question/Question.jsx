@@ -61,7 +61,7 @@ const Question = ({ ques , indexNo }) => {
       ) } ><FontAwesomeIcon className="bg-indigo-600 text-center p-2 text-white rounded-full text-lg" icon={faQuestionCircle} /></span>
       </div>
 
-      <div className="grid grid-cols-2 mt-5 gap-4 justify-between">
+      <div className="grid md:grid-cols-2 grid-cols-1 mt-5 gap-4 justify-between">
         {
         options.map((op, index) => (
           <button
