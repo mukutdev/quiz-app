@@ -5,11 +5,8 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Question = ({ ques }) => {
   
-  
-  
 
-
-  const { id, options, correctAnswer, question } = ques;
+  const { options, correctAnswer, question} = ques;
   const quesSplit = question.replace(/(<([^>]+)>)/gi, "");
 
   const [selected, setSelected] = useState();
@@ -36,12 +33,15 @@ const Question = ({ ques }) => {
   };
 
   const handleCheck = answer => {
+    setSelected(answer);
     if(answer === correctAnswer){
       toast.success('Wow Great Job ! Its a Right answer')
+      // setQuizCount((quizCount) => quizCount + 1)
+      // setTotal(total + 1)
     }else{
       toast.error('Opps !, Wrong answer')
     }
-    setSelected(answer);
+    
   };
 
   // let count = 0
@@ -81,6 +81,7 @@ const Question = ({ ques }) => {
                           hover:text-white
                          
                           `}
+                       
           > {op}
           </button>
           

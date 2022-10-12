@@ -5,17 +5,8 @@ import Question from '../Question/Question';
 const QuizElement = () => {
 
     const quizData = useLoaderData()
-    const {id , name , total , logo , questions} = quizData.data
-    const [quizCount, setQuizCount] = useState(1)
-
-    // setQuizCount(quizCount + 1)
-    // console.log(quizData.data);
-
-    // let count = 1;
-
-    // const increaseCount = () =>{
-    //     setQuizCount(quizCount + 1);
-    // }
+    const { name , total , logo , questions} = quizData.data
+   
     return (
         <div className='container mx-auto mt-20'>
             <div className='md:w-1/2 md:mx-auto mx-6 rounded-sm shadow-lg p-5'>
@@ -24,6 +15,8 @@ const QuizElement = () => {
                </div>
             <h2 className='text-center text-indigo-600 capitalize text-2xl font-bold'>{name} Important Question</h2>
             <h3 className='text-center my-4 font-semibold text-base'>Total Quiz : {total}</h3>
+            <h3 className='text-center my-4 font-semibold text-base'>Correct Quiz : </h3>
+
             </div>
 
             <div className='md:w-1/2 md:mx-auto rounded-sm shadow-lg bg-slate-100 p-5 my-8'>
@@ -32,9 +25,6 @@ const QuizElement = () => {
                         questions.map(ques => <Question
                         key={ques.id}
                         ques={ques}
-                        // quizCount={quizCount}
-                   
-                        
                         ></Question>)
                     }
                 </div>

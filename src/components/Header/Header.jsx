@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars  , faXmark} from '@fortawesome/free-solid-svg-icons'
-// import qLogo from '../../../public/Quiz-logo'
 import logo  from '../../../public/logo.png'
 
 const Header = () => {
@@ -22,7 +21,7 @@ const Header = () => {
                  <div className="nav-items-wrapper flex justify-between items-center">
                  <div className="logo md:ml-0 ml-3">
                     <Link className='text-3xl font-bold text-indigo-600' to={'/'}>
-                    {/* Quiz Storm */}
+        
                          <img src={logo} alt="" />
                     </Link>
                  </div>
@@ -30,8 +29,8 @@ const Header = () => {
                     <div  onClick={()=> setNavOpen(!navOpen)} className='mr-4 rounded text-2xl bg-indigo-600 px-3 py-1 duration-500 ease-in text-white cursor-pointer top-0  md:hidden'>
                     {
                         navOpen ? 
-                        <FontAwesomeIcon  icon={faXmark} /> :
-                        <FontAwesomeIcon   icon={faBars} />
+                        <FontAwesomeIcon className='text-2xl' icon={faXmark} /> :
+                        <FontAwesomeIcon   className='text-2xl' icon={faBars} />
                     }
              
                     </div>

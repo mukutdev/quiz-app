@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import {
     BarChart,
@@ -17,29 +17,6 @@ const Statistic = () => {
     const quizStat = useLoaderData()
     const quizData = quizStat.data
 
-    const data = [
-        {
-          name: quizData[0].name,
-         quiz: quizData[0].total,
-       
-        },
-        {
-            name: quizData[1].name,
-            quiz: quizData[1].total,
-      
-        },
-        {
-            name: quizData[2].name,
-            quiz: quizData[2].total,
-      
-        },
-        {
-            name: quizData[3].name,
-            quiz: quizData[3].total,
-        },
-        
-      ];
-
     return (
         <div className='container mx-auto my-6'>
             <h1 className='font-semibold text-center text-3xl'>Quiz Stats</h1>
@@ -52,7 +29,7 @@ const Statistic = () => {
                       <BarChart
                     className='md:mx-auto '
                     
-                    data={data}
+                    data={quizData}
                     margin={{
                       top: 5,
                       right: 30,
@@ -65,7 +42,7 @@ const Statistic = () => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="quiz" fill="#8884d8" />
+                    <Bar dataKey="total" fill="#4506CB" />
                
                   </BarChart>
                   </ResponsiveContainer>
