@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from "react-hot-toast";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Question = ({ ques }) => {
+  
+  
+  
+
 
   const { id, options, correctAnswer, question } = ques;
   const quesSplit = question.replace(/(<([^>]+)>)/gi, "");
@@ -32,9 +37,9 @@ const Question = ({ ques }) => {
 
   const handleCheck = answer => {
     if(answer === correctAnswer){
-      toast("Right Answer"); 
+      toast.success('Wow Great Job ! Its a Right answer')
     }else{
-      toast("wrong Answer"); 
+      toast.error('Opps !, Wrong answer')
     }
     setSelected(answer);
   };
@@ -43,9 +48,19 @@ const Question = ({ ques }) => {
 
   return (
     <div className="bg-white my-6 p-5 rounded-sm shadow ">
+      <div className="flex justify-between items-center gap-7">
       <h1 className="font-medium text-lg">
         {} {quesSplit}
       </h1>
+      <span className="cursor-pointer" title="See Answer" onClick={() => toast(
+
+        <h1 className="font-medium text-xl">Correct Answer is : <strong>{correctAnswer}</strong> </h1> ,
+        {
+          duration: 2000,
+        }
+
+      ) } ><FontAwesomeIcon className="bg-indigo-600 text-center p-2 text-white rounded-full text-lg" icon={faQuestionCircle} /></span>
+      </div>
 
       <div className="grid grid-cols-2 mt-5 gap-4 justify-between">
         {
@@ -71,7 +86,7 @@ const Question = ({ ques }) => {
           
         )
         )}
-                <ToastContainer />
+               <Toaster />
 
       </div>
     </div>
