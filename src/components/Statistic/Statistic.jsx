@@ -46,9 +46,6 @@ const Statistic = () => {
 
             <div className='md:w-2/3 mx-auto my-8 shadow-lg rounded md:p-5 py-3'>
                 
-                 
-
-                   
                     {
                        <ResponsiveContainer width= {'100%'}
                        height={300}>
@@ -75,7 +72,7 @@ const Statistic = () => {
                   
                 }
                     
-                    <h1 className='text-center font-medium mt-6 text-lg'>Quiz Chart</h1>
+               
             </div>
         </div>
         

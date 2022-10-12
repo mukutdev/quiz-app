@@ -14,7 +14,7 @@ const Question = ({ ques }) => {
 
   const [selected, setSelected] = useState();
 
-  const rightColors = {bg : 'bg-green-600' , color : 'text-white'}
+  const rightColors = {bg : 'bg-green-600' , color : 'text-white' }
   const wrongColors = {bg : 'bg-red-600' , color : 'text-white'}
 
 
