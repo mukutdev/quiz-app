@@ -6,7 +6,7 @@ This is a short quiz application that allows people who are new to programming t
 
 ## Live site link
 
-https://health-club-mukut.netlify.app/
+https://quiz-storm.netlify.app/
 
 ## Features
 
