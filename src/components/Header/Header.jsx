@@ -18,13 +18,13 @@ const Header = () => {
         <header className='shadow py-5'>
               <nav className='container mx-auto'>
                  <div className="nav-items-wrapper flex justify-between items-center">
-                 <div className="logo">
+                 <div className="logo md:ml-0 ml-3">
                     <Link className='text-3xl font-bold text-indigo-600' to={'/'}>
                     Quiz App
                     </Link>
                  </div>
                  <div className="nav-items">
-                    <div  onClick={()=> setNavOpen(!navOpen)} className='mr-4 text-2xl bg-indigo-600 px-3 py-1 duration-500 ease-in text-white cursor-pointer top-0  md:hidden'>
+                    <div  onClick={()=> setNavOpen(!navOpen)} className='mr-4 rounded text-2xl bg-indigo-600 px-3 py-1 duration-500 ease-in text-white cursor-pointer top-0  md:hidden'>
                     {
                         navOpen ? 
                         <FontAwesomeIcon  icon={faXmark} /> :

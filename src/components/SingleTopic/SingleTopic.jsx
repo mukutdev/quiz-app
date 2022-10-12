@@ -7,12 +7,12 @@ const SingleTopic = ({quiz}) => {
 
     const {id ,name , total , logo} = quiz
     return (
-        <div className='shadow-lg rounded border p-4'>
-            <div className='flex items-center'>
-               <div className='bg-slate-100 h-72'>
-                 <img className='h-72 object-cover rounded' src={logo} alt={name} />
+        <div className='shadow-lg rounded border p-4  md:mx-0 mx-4' >
+            <div className='flex flex-col md:flex-row md:items-center'>
+               <div className='bg-slate-100 md:w-auto w-full h-72 '>
+                 <img className='h-72  md:w-auto w-full md:object-cover  rounded' src={logo} alt={name} />
                </div>
-               <div className='ml-28'>
+               <div className='md:ml-28 my-4 '>
                    <h2 className='text-3xl font-semibold tracking-widest '>{name}</h2>
                     <h3 className='text-base font-semibold tracking-widest my-4'>Total Quiz : {total}</h3>
                     <Link to={`/topics/${id}`}>

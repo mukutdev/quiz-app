@@ -11,9 +11,9 @@ const Topics = () => {
     <div>
          <Hero></Hero>
 
-         <div className="container mx-auto mt-20" id="quiz-area">
-             <h2 className="text-center text-3xl font-bold">Select Quiz Department </h2>
-             <div className="grid md:grid-cols-2 justify-center gap-10 my-20">
+         <div className="container mx-auto md:mt-20 mt-12" id="quiz-area">
+             <h2 className="text-center md:text-3xl  text-2xl font-bold">Select Quiz Department </h2>
+             <div className="grid md:grid-cols-2 md:justify-center gap-10 my-20">
                  {
                    quizDep.map(quiz => <SingleTopic 
                     key={quiz.id}
